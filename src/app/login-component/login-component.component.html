@@ -28,6 +28,7 @@
                         <mat-form-field class="full-width">
                             <mat-label>Password</mat-label>
                                 <input 
+                                type="password"
                                 id="mysecretpassword" 
                                 matInput 
                                 placeholder="Password" 
@@ -53,10 +54,7 @@
                                     passwsord should be minimum of 8 characters..
                                 </mat-error>
                                 <mat-error *ngIf = "password.errors.pattern">
-                                    This pattern requires at least two lowercase letters,
-                                     two uppercase letters, two digits, and two special characters. 
-                                     There must be a minimum of 9 characters total, 
-                                    and no white space characters are allowed.
+                                    Password is weak!
                                </mat-error>
                             </mat-error>
                         </mat-form-field>
