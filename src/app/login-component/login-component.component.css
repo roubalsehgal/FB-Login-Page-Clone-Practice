@@ -1,0 +1,41 @@
+.full-width {
+    width:100%;
+}
+
+.my-card{
+    width:70%;
+}
+
+#btn{
+    margin-left: 2%;
+}
+
+/* Overrides Underline Color */
+::ng-deep .mat-form-field-underline, 
+::ng-deep .mat-form-field-ripple {
+    background-color: white !important;
+}
+
+/* Overrides Label Color */
+::ng-deep .mat-form-field-label {
+    color: white !important;
+}
+
+/* Overrides Error Color */
+::ng-deep .mat-error {
+    color: white;
+}
+
+.footer-links{
+    margin-top: 1%;
+    margin-left: 11%;
+}
+
+.footer-links ul{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footer-links li{
+    margin-left: 25%;
+}

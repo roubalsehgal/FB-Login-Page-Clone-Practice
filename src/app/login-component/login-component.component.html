@@ -1,0 +1,84 @@
+<div class="layout" style="background-color: white;">
+    <div class="login-page" style="display: inline-flex; width: 100%;">
+
+        <div style="margin: 5.2% 0% 0% 5%; width: 50%;" >
+            <h1 style="margin-left: 9%;">Welcome back!</h1>
+            <img src="assets/img/main-img-4.jpg" height="500px" style="border-radius: 20px;">
+        </div>
+
+        <div class="main-form" style=" margin: 8% 0% 0% 12%; width: 40%;">
+            <mat-card class="my-card" style="background-color: #555ba9;">
+                <mat-card-content>
+                    <form class="my-form" (ngSubmit) = "onLogin(loginForm)" #loginForm = "ngForm">
+                        <mat-form-field class="full-width">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput placeholder="Email" ngModel name="email" #email = "ngModel" 
+                            pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                            required>
+
+                            <mat-error *ngIf= "email.invalid">
+                                <mat-error *ngIf = "email.errors.required">
+                                    Pls enter the email field
+                                </mat-error>
+                                <mat-error *ngIf = "email.errors.pattern">
+                                    email address should be like abc@gmail.com
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+                                <input 
+                                id="mysecretpassword" 
+                                matInput 
+                                placeholder="Password" 
+                                minlength="8"
+                                ngModel 
+                                name="password" 
+                                #password = "ngModel" 
+                                pattern = "^(?=.*[a-z].*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d.*\d)(?=.*\W.*\W)[a-zA-Z0-9\S]{9,}$" 
+                                required 
+                                showHideInput>
+                                <!--
+                                <i matSuffix
+                                class="material-icons"
+                                showHideTrigger = "mysecretpassword"
+                                [showHideStatus] = "{materialIcon:true,id:'mysecretpassword'}"
+                                ></i>
+                                -->
+                            <mat-error *ngIf= "password.invalid">
+                                <mat-error *ngIf = "password.errors.required">
+                                    Pls enter the password field
+                                </mat-error>
+                                <mat-error *ngIf = "password.errors.minlength">
+                                    passwsord should be minimum of 8 characters..
+                                </mat-error>
+                                <mat-error *ngIf = "password.errors.pattern">
+                                    This pattern requires at least two lowercase letters,
+                                     two uppercase letters, two digits, and two special characters. 
+                                     There must be a minimum of 9 characters total, 
+                                    and no white space characters are allowed.
+                               </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-card-actions>
+                            <button mat-raised-button type="submit" color="primary" [disabled] = "!loginForm.valid">Login</button>
+                                <a mat-raised-button routerLink ="/registerPage">Register</a>
+                        </mat-card-actions>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <hr style="width: 70%">
+    <div class="footer-links">
+        <ul style="display: inline-flex;">
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+        </ul>
+    </div>
+</div>

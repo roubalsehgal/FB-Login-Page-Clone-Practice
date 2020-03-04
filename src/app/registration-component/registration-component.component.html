@@ -1,0 +1,182 @@
+<div class="layout" style="background-color: white;">
+    <div class="reg-page" style="display: inline-flex;">
+
+        <div style="margin: 5.2% 0% 0% 5%; width: 50%;" >
+            <h1 style="margin-left: 9%;">Create an account.</h1>
+            <img src="assets/img/main-img.jpg" height="500px" style="border-radius: 20px;">
+        </div>
+
+        <div class="main-form" style=" margin: 4.2% 0% 0% 12%; width: 40%;">
+            <mat-card class="my-card" style="background-color: #555ba9;">
+                <mat-card-content>
+                    <form class="my-form" (ngSubmit) = "onRegister(registerForm)" #registerForm = "ngForm">
+            
+                        <!-- First Name -->
+                        <mat-form-field class="full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" minlength="3" name="firstName" ngModel #firstName="ngModel" required style="width: 100%;">
+                        
+                        <mat-error *ngIf = "firstName.invalid">
+                            <mat-error *ngIf = "firstName.errors.required">
+                                Pls enter the first name field
+                            </mat-error>
+            
+                            <mat-error *ngIf = "firstName.errors.minlength">
+                                Name should be minimun of {{firstName.errors.minlength.requiredLength}} characters..
+                            </mat-error>
+                        </mat-error>
+                        </mat-form-field>
+                        <!-- First Name -->
+                        
+                        <!-- Last Name -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Last Name" minlength="3" name="lastName" ngModel #lastName = "ngModel" required>
+                            <mat-error *ngIf = "lastName.invalid">
+                                <mat-error *ngIf = "lastName.errors.required">
+                                    Pls enter the last name field
+                                </mat-error>
+                            
+                                <mat-error *ngIf = "lastName.errors.minlength">
+                                    Name should be minimun of {{lastName.errors.minlength.requiredLength}} characters..
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- Last Name -->
+            
+                        <!-- Mob Number -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Mobile Number</mat-label>
+                            <input matInput placeholder="Mobile number" minlength="10" name="mob" ngModel #mob = "ngModel" pattern = "^((\\+91-?)|0)?[0-9]{10}$" required>
+                            
+                            <mat-error *ngIf = "mob.invalid">
+                                <mat-error *ngIf = "mob.errors.required">
+                                    Pls enter the mobile number
+                                </mat-error>
+                                <mat-error *ngIf = "mob.errors.minlength">
+                                    mobile number does not contain 
+                                    {{mob.errors.minlength.requiredLength}} digits.
+                                </mat-error>
+                                <mat-error *ngIf = "mob.errors.pattern">
+                                    mobile number should contain digits from 0-9.
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- Mob Number -->
+            
+                        <!-- Email -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Email address</mat-label>
+                            <input type="email" matInput placeholder="Email" name="email" ngModel #email = "ngModel" pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+                                <mat-error *ngIf = "email.invalid">
+                                    <mat-error *ngIf = "email.errors.required">
+                                        Pls enter the email address
+                                    </mat-error>
+                                    <mat-error *ngIf = "email.errors.pattern">
+                                        email address should be like abc@gmail.com
+                                    </mat-error>
+                                </mat-error>
+                        </mat-form-field>
+                        <!-- Email -->
+            
+                        <!-- Password -->
+                        <mat-form-field class="full-width">
+                            <mat-label>Password</mat-label>
+            
+                            <input 
+                            id="mysecretpassword" 
+                            type="password" 
+                            placeholder="Password"  
+                            minlength="9"
+                            pattern = "" 
+                        
+                            name="password"
+                            ngModel 
+                            #password = "ngModel" 
+                            required 
+                            pattern  = "^(?=.*[a-z].*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d.*\d)(?=.*\W.*\W)[a-zA-Z0-9\S]{9,}$"
+                            matInput 
+                            showHideInput>
+            
+                            <mat-error *ngIf = "password.invalid">
+                                <mat-error *ngIf = "password.errors.required">
+                                    Pls enter the password field
+                                </mat-error>
+                                <mat-error *ngIf = "password.errors.minlength">
+                                    password should be minimun of {{password.errors.minlength.requiredLength}} characters..
+                                </mat-error>
+                                <mat-error *ngIf = "password.errors.pattern">
+                                    This pattern requires at least two lowercase letters,
+                                    two uppercase letters, two digits, and two special characters. 
+                                    There must be a minimum of 9 characters total, 
+                                    and no white space characters are allowed.
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- Password -->
+            
+                        <!-- Gender -->
+                        <section class="example-section">
+                            <label class="example-margin">Gender:</label><br><br>
+                                <mat-radio-group name="gender"  [(ngModel)]="gender">
+                                    <mat-radio-button 
+                                    class="example-margin" 
+                                    value="male"> Male </mat-radio-button>&nbsp;
+                                    <mat-radio-button 
+                                    class="example-margin" 
+                                    value="female"> Female </mat-radio-button>&nbsp;
+                                    <mat-radio-button 
+                                    class="example-margin" 
+                                    value="other"> Other </mat-radio-button>
+                                </mat-radio-group>&nbsp;
+                        </section>
+                        <!-- Gender -->
+            
+                        <!-- DOB -->
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Date of Birth</mat-label>
+                            <input 
+                            matInput 
+                            [matDatepicker] = "picker" 
+                            placeholder="Choose a date">
+                            <mat-datepicker-toggle 
+                            matSuffix [for] = "picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        <!-- DOB -->
+            
+                        <!-- Buttons -->
+                        <mat-card-actions>
+                            <button 
+                            id="btn"
+                            mat-raised-button 
+                            type="submit" color="primary" [disabled] = "!registerForm.valid" (click) = "registerProcess(registerForm)">Sign Up</button>      
+                        </mat-card-actions>
+                        <!-- Buttons -->
+            
+                        <!-- T/C -->
+                        <p>
+                            By clicking Sign up, you agree to our Terms, Data Policy and Cookie Policy.
+                        </p>
+                        <!-- T/C -->
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <hr style="width: 70%">
+    <div class="footer-links">
+        <ul style="display: inline-flex;">
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+            <li><a href="">Demo</a></li>
+        </ul>
+    </div>
+</div>
+    
+    
