@@ -1,0 +1,42 @@
+#search-bar{
+    margin-left: 60px;
+}
+#menu-content{
+    margin-left: 14%;
+}
+#menu-items li{
+    margin-left: 25px;
+    font-size: 20px;
+}
+.material-icons.md-28 { 
+    font-size: 28px; 
+}
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+.material-icons.md-light { 
+    color: rgba(255, 255, 255, 1); 
+}
+#user-stories{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.wrapper{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+mat-card-title{
+    color: black;
+}
+.profile-card {
+    height: 300px;
+    width: 250px;
+}
+.suggestions{
+    height: 300px;
+    width: 250px;
+}
+.chat-card{
+    height: 620px;
+    width: 305px;
+}

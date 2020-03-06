@@ -148,7 +148,12 @@
                             <button 
                             id="btn"
                             mat-raised-button 
-                            type="submit" color="primary" [disabled] = "!registerForm.valid" (click) = "registerProcess(registerForm)">Sign Up</button>      
+                            type="submit" color="primary" [disabled] = "!registerForm.valid" (click) = "registerProcess(registerForm)">Sign Up</button>
+                            
+                            <button 
+                            id="btn"
+                            mat-raised-button 
+                            type="submit" color="primary" (click) = "registerProcess(registerForm)" routerLink="/login">Login</button>
                         </mat-card-actions>
                         <!-- Buttons -->
             
@@ -165,13 +170,13 @@
     <hr style="width: 70%">
     <div class="footer-links">
         <ul style="display: inline-flex;">
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
         </ul>
     </div>
 </div>

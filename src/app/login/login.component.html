@@ -39,13 +39,7 @@
                                 pattern = "^(?=.*[a-z].*[a-z])(?=.*[A-Z].*[A-Z])(?=.*\d.*\d)(?=.*\W.*\W)[a-zA-Z0-9\S]{9,}$" 
                                 required 
                                 showHideInput>
-                                <!--
-                                <i matSuffix
-                                class="material-icons"
-                                showHideTrigger = "mysecretpassword"
-                                [showHideStatus] = "{materialIcon:true,id:'mysecretpassword'}"
-                                ></i>
-                                -->
+
                             <mat-error *ngIf= "password.invalid">
                                 <mat-error *ngIf = "password.errors.required">
                                     Pls enter the password field
@@ -59,8 +53,7 @@
                             </mat-error>
                         </mat-form-field>
                         <mat-card-actions>
-                            <button mat-raised-button type="submit" color="primary" [disabled] = "!loginForm.valid">Login</button>
-                                <a mat-raised-button routerLink ="/registerPage">Register</a>
+                            &nbsp;&nbsp;&nbsp;<button mat-raised-button type="submit" color="primary" [disabled] = "!loginForm.valid" routerLink="/home">Login</button>
                         </mat-card-actions>
                     </form>
                 </mat-card-content>
@@ -70,13 +63,13 @@
     <hr style="width: 70%">
     <div class="footer-links">
         <ul style="display: inline-flex;">
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
-            <li><a href="">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
+            <li><a href="" style="text-decoration: none;">Demo</a></li>
         </ul>
     </div>
 </div>
