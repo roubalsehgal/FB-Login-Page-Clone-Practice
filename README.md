@@ -1,4 +1,4 @@
-# Social-Media-Project
+# FB-Login-Page-Clone-Practice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
